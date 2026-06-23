@@ -675,10 +675,22 @@ a {
     margin-bottom: 5px;
 }
 
+.maps-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-box h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
 .map-container {
     border-radius: 10px;
     overflow: hidden;
-    height: 400px;
+    height: 250px;
 }
 
 .map-container iframe {
