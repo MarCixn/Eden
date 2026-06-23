@@ -359,6 +359,15 @@
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
         }
+
+        // Set active nav link based on current page
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === location.pathname.split('/').pop() ||
+                (location.pathname.endsWith('/') && link.getAttribute('href') === 'index.html')) {
+                link.classList.add('active');
+            }
+        });
     </script>
 </body>
 </html>

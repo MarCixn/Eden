@@ -126,7 +126,7 @@
                         <li><a href="index.html#uslugi">Oferta</a></li>
                         <li><a href="cennik.html">Cennik</a></li>
                         <li><a href="dokumenty.html">Dokumenty</a></li>
-                        <li><a href="informacje-prawne.html" class="active">Informacje prawne</a></li>
+                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
                         <li><a href="index.html#kontakt">Kontakt</a></li>
                     </ul>
                 </nav>
@@ -729,6 +729,15 @@
             header.addEventListener('click', () => {
                 header.parentElement.classList.toggle('active');
             });
+        });
+
+        // Set active nav link based on current page
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === location.pathname.split('/').pop() ||
+                (location.pathname.endsWith('/') && link.getAttribute('href') === 'index.html')) {
+                link.classList.add('active');
+            }
         });
     </script>
 </body>
