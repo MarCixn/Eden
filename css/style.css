@@ -62,10 +62,17 @@ a {
     align-items: center;
 }
 
+.logo {
+    overflow: hidden;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    height: 140px;
+    height: 180px;
     width: auto;
-    max-height: none;
+    margin: -55px 0;
 }
 
 .nav ul {
@@ -317,8 +324,13 @@ a {
         gap: 3px;
     }
 
+    .logo {
+        height: 50px;
+    }
+
     .logo img {
-        height: 80px;
+        height: 130px;
+        margin: -40px 0;
     }
 
     .container {
