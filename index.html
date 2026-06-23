@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TVK EDEN - Telewizja kablowa i Internet w Kluczborku i Byczynie. Niezawodna jakość, lokalna obsługa.">
+    <title>EDEN - Telewizja kablowa i Internet | Kluczbork, Byczyna</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+        <symbol id="icon-location" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></symbol>
+        <symbol id="icon-tv" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></symbol>
+        <symbol id="icon-wifi" viewBox="0 0 24 24"><path fill="currentColor" d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></symbol>
+        <symbol id="icon-document" viewBox="0 0 24 24"><path fill="currentColor" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/></symbol>
+        <symbol id="icon-email" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+        <symbol id="icon-globe" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></symbol>
+    </svg>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>Tel: 77 414 24 88 | Kom: +48 601 718 675 | eden@mobilnakraina.pl</span>
+                <span>Pon-Pt: 8:00 - 16:00</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="EDEN Telewizja Internet">
+                </a>
+                <nav class="nav">
+                    <button class="mobile-menu-btn" onclick="toggleMenu()">
+                        <svg class="icon"><use href="#icon-menu"/></svg>
+                    </button>
+                    <ul id="nav-menu">
+                        <li><a href="index.html" class="active">Strona Glowna</a></li>
+                        <li><a href="#uslugi">Oferta</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="dokumenty.html">Dokumenty</a></li>
+                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- TV Screens Background -->
+        <div class="hero-bg">
+            <div class="screen" style="background: linear-gradient(135deg, #ff6b6b, #ee5253);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #4ecdc4, #44bd9e);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #43e97b, #38f9d7);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #fa709a, #fee140);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #a8edea, #fed6e3);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #ff9a9e, #fecfef);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #11998e, #38ef7d);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #fc5c7d, #6a82fb);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #f12711, #f5af19);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #c471f5, #fa71cd);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #00c6ff, #0072ff);"></div>
+            <div class="screen" style="background: linear-gradient(135deg, #f857a6, #ff5858);"></div>
+        </div>
+        <div class="container hero-content">
+            <h1>Telewizja kablowa<br>i Internet</h1>
+            <p class="hero-subtitle">Niezawodna jakosc. Lokalnie w Kluczborku i Byczynie.</p>
+            <div class="hero-buttons">
+                <a href="#uslugi" class="btn btn-primary">Sprawdz oferte</a>
+                <a href="cennik.html" class="btn btn-outline">Zobacz pakiety</a>
+            </div>
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <svg class="hero-feature-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Bez limitu danych</span>
+                </div>
+                <div class="hero-feature">
+                    <svg class="hero-feature-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Lokalna obsluga 24/48h</span>
+                </div>
+                <div class="hero-feature">
+                    <svg class="hero-feature-icon" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Umowy bez okresu</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <section class="info-bar">
+        <div class="container">
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg class="icon"><use href="#icon-phone"/></svg>
+                </div>
+                <div class="info-content">
+                    <h4>Zadzwon do nas</h4>
+                    <p>Tel: 77 414 24 88</p>
+                    <p>Kom: +48 601 718 675</p>
+                    <p>Pon-Pt: 8:00 - 16:00</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg class="icon"><use href="#icon-location"/></svg>
+                </div>
+                <div class="info-content">
+                    <h4>Biuro Obslugi Klienta - Kluczbork</h4>
+                    <p>ul. Mickiewicza 14</p>
+                    <p>46-200 Kluczbork</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <svg class="icon"><use href="#icon-location"/></svg>
+                </div>
+                <div class="info-content">
+                    <h4>Biuro Obslugi Klienta - Byczyna</h4>
+                    <p>ul. Wałowa 30</p>
+                    <p>46-220 Byczyna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="uslugi">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nasze uslugi</h2>
+                <p>Oferujemy niezawodne uslugi telewizji kablowej i szybkiego internetu</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg class="icon-large"><use href="#icon-tv"/></svg>
+                    </div>
+                    <h3>Telewizja kablowa</h3>
+                    <p>Bogata oferta programowa w pakiecie Standard. Wysoka jakosc obrazu i dzwieku dla calej rodziny.</p>
+                    <a href="cennik.html" class="btn btn-primary">Sprawdz pakiety</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg class="icon-large"><use href="#icon-wifi"/></svg>
+                    </div>
+                    <h3>Internet</h3>
+                    <p>Szybki i bezpieczny Internet dla domu i firmy. Trzy pakiety dostosowane do Twoich potrzeb.</p>
+                    <a href="cennik.html" class="btn btn-primary">Sprawdz pakiety</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dlaczego warto wybrac TVK Eden?</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>Lokalna obsluga</h4>
+                    <p>Jestesmy blisko - biura w Kluczborku i Byczynie. Szybka pomoc techniczna na miejscu.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Konkurencyjne ceny</h4>
+                    <p>Atrakcyjne pakiety laczace telewizje i internet w korzystnych cenach.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Niezawodnosc</h4>
+                    <p>Stabilna siec i szybkie usuwanie awarii - maksymalnie 48 godzin.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Bez dlugich umow</h4>
+                    <p>Oferujemy umowy na czas nieokreslony z mozliwoscia wypowiedzenia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="pricing" id="cennik">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cennik uslug</h2>
+                <p>Wybierz pakiet dopasowany do Twoich potrzeb</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Telewizja kablowa</h3>
+                    <div class="price">35 <span>zl/mies.</span></div>
+                    <ul>
+                        <li>Pakiet Standard</li>
+                        <li>Umowa na czas nieokreslony</li>
+                        <li>Bogata oferta programowa</li>
+                    </ul>
+                    <a href="cennik.html" class="btn btn-primary">Szczegoly</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>TV + Internet</h3>
+                    <div class="price">70,25 <span>zl/mies.</span></div>
+                    <ul>
+                        <li>Telewizja pakiet Standard</li>
+                        <li>Internet pakiet I</li>
+                        <li>Umowa na czas nieokreslony</li>
+                    </ul>
+                    <a href="cennik.html" class="btn btn-primary">Szczegoly</a>
+                </div>
+                <div class="price-card">
+                    <h3>Internet</h3>
+                    <div class="price">30,25 <span>zl/mies.</span></div>
+                    <ul>
+                        <li>Pakiet I</li>
+                        <li>Umowa na czas nieokreslony</li>
+                        <li>Modem: 1,23 zl/mies.</li>
+                    </ul>
+                    <a href="cennik.html" class="btn btn-primary">Szczegoly</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="documents" id="dokumenty">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dokumenty do pobrania</h2>
+                <p>Regulamin, umowa i inne wazne dokumenty</p>
+            </div>
+            <div class="documents-grid">
+                <a href="dokumenty/Regulamin_TVK_EDEN.docx" class="doc-item" download>
+                    <span class="doc-icon">
+                        <svg class="icon-doc"><use href="#icon-document"/></svg>
+                    </span>
+                    <div>
+                        <strong>Regulamin</strong>
+                        <p>Regulamin swiadczenia uslug TVK EDEN</p>
+                    </div>
+                </a>
+                <a href="dokumenty/Umowa_TVK_EDEN.docx" class="doc-item" download>
+                    <span class="doc-icon">
+                        <svg class="icon-doc"><use href="#icon-document"/></svg>
+                    </span>
+                    <div>
+                        <strong>Umowa</strong>
+                        <p>Wzor umowy o swiadczenie uslug</p>
+                    </div>
+                </a>
+                <a href="dokumenty/Cennik_uslug.docx" class="doc-item" download>
+                    <span class="doc-icon">
+                        <svg class="icon-doc"><use href="#icon-document"/></svg>
+                    </span>
+                    <div>
+                        <strong>Cennik</strong>
+                        <p>Pelny cennik uslug telekomunikacyjnych</p>
+                    </div>
+                </a>
+                <a href="dokumenty/Podsumowanie_warunkow_umowy.docx" class="doc-item" download>
+                    <span class="doc-icon">
+                        <svg class="icon-doc"><use href="#icon-document"/></svg>
+                    </span>
+                    <div>
+                        <strong>Podsumowanie warunkow</strong>
+                        <p>Zwiezle podsumowanie warunkow umowy</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontakt</h2>
+                <p>Skontaktuj sie z nami</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Mobilna Kraina Eden Witold Perucki</h3>
+                    <p style="margin-bottom: 20px; color: var(--gray);">
+                        NIP: 751-123-00-41 | REGON: 531342360
+                    </p>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-sm"><use href="#icon-location"/></svg>
+                        </span>
+                        <div>
+                            <strong>Biuro Kluczbork</strong>
+                            ul. Mickiewicza 14<br>
+                            46-200 Kluczbork
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-sm"><use href="#icon-location"/></svg>
+                        </span>
+                        <div>
+                            <strong>Biuro Byczyna</strong>
+                            ul. Wałowa 30<br>
+                            46-220 Byczyna
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-sm"><use href="#icon-clock"/></svg>
+                        </span>
+                        <div>
+                            <strong>Godziny otwarcia</strong>
+                            Poniedzialek - Piatek: 8:00 - 16:00
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-sm"><use href="#icon-email"/></svg>
+                        </span>
+                        <div>
+                            <strong>Email</strong>
+                            eden@mobilnakraina.pl
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon">
+                            <svg class="icon-sm"><use href="#icon-globe"/></svg>
+                        </span>
+                        <div>
+                            <strong>Strona internetowa</strong>
+                            www.tvkeden.pl
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2512.5!2d18.2167!3d50.9733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDU4JzI0LjAiTiAxOMKwMTMnMDAuMCJF!5e0!3m2!1spl!2spl!4v1600000000000!5m2!1spl!2spl" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>O nas</h4>
+                    <p>TVK EDEN to lokalny dostawca telewizji kablowej i internetu w Kluczborku i Byczynie. Zapewniamy niezawodne uslugi i profesjonalna obsluge.</p>
+                    <p style="margin-top: 10px; font-size: 12px; color: #888;">NIP: 751-123-00-41 | REGON: 531342360</p>
+                </div>
+                <div>
+                    <h4>Szybkie linki</h4>
+                    <ul>
+                        <li><a href="index.html">Strona Glowna</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="dokumenty.html">Dokumenty</a></li>
+                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Dokumenty</h4>
+                    <ul>
+                        <li><a href="dokumenty/Regulamin_TVK_EDEN.docx">Regulamin</a></li>
+                        <li><a href="dokumenty/Umowa_TVK_EDEN.docx">Umowa</a></li>
+                        <li><a href="dokumenty/Cennik_uslug.docx">Cennik</a></li>
+                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <p>ul. Mickiewicza 14<br>46-200 Kluczbork</p>
+                    <p>ul. Wałowa 30<br>46-220 Byczyna</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mobilna Kraina Eden Witold Perucki. Wszelkie prawa zastrzezone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

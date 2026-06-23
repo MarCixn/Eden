@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bgGrad)" width="1920" height="600"/>
+  <!-- Network/connection visualization -->
+  <g opacity="0.1">
+    <circle cx="200" cy="150" r="80" fill="none" stroke="#E91E8C" stroke-width="2"/>
+    <circle cx="500" cy="300" r="120" fill="none" stroke="#E91E8C" stroke-width="2"/>
+    <circle cx="1400" cy="200" r="100" fill="none" stroke="#E91E8C" stroke-width="2"/>
+    <circle cx="1700" cy="400" r="60" fill="none" stroke="#E91E8C" stroke-width="2"/>
+    <line x1="200" y1="150" x2="500" y2="300" stroke="#E91E8C" stroke-width="1"/>
+    <line x1="500" y1="300" x2="1400" y2="200" stroke="#E91E8C" stroke-width="1"/>
+    <line x1="1400" y1="200" x2="1700" y2="400" stroke="#E91E8C" stroke-width="1"/>
+  </g>
+  <g opacity="0.05">
+    <rect x="1500" y="100" width="200" height="150" rx="10" fill="#fff"/>
+    <rect x="100" y="350" width="180" height="130" rx="10" fill="#fff"/>
+  </g>
+</svg>

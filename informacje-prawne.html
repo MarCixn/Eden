@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Informacje wymagane prawem - TVK EDEN, art. 300 Prawa komunikacji elektronicznej">
+    <title>Informacje prawne - EDEN Telewizja kablowa i Internet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 36px; }
+        .legal-section { padding: 60px 0; }
+        .legal-section:nth-child(even) { background: var(--light-gray); }
+        .legal-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .legal-box h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .legal-box h3 {
+            color: var(--dark);
+            margin: 25px 0 15px;
+        }
+        .legal-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .legal-box th, .legal-box td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .legal-box th {
+            background: var(--dark);
+            color: white;
+        }
+        .legal-box tr:hover { background: #f9f9f9; }
+        .legal-box ul, .legal-box ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        .legal-box li { margin-bottom: 8px; }
+        .highlight-box {
+            background: #fff3f8;
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .speed-value {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .tv-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .tv-channel {
+            background: var(--light-gray);
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .accordion {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .accordion-header {
+            padding: 15px 20px;
+            background: var(--light-gray);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-header:hover { background: #e8e8e8; }
+        .accordion-content {
+            padding: 20px;
+            display: none;
+        }
+        .accordion.active .accordion-content { display: block; }
+        .accordion-icon { transition: transform 0.3s; }
+        .accordion.active .accordion-icon { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+    <!-- SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></symbol>
+    </svg>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span>Tel: 77 414 24 88 | Kom: +48 601 718 675 | eden@mobilnakraina.pl</span>
+                <span>Pon-Pt: 8:00 - 16:00</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="EDEN Telewizja Internet">
+                </a>
+                <nav class="nav">
+                    <button class="mobile-menu-btn" onclick="toggleMenu()"><svg class="icon"><use href="#icon-menu"/></svg></button>
+                    <ul id="nav-menu">
+                        <li><a href="index.html">Strona Główna</a></li>
+                        <li><a href="index.html#uslugi">Oferta</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="dokumenty.html">Dokumenty</a></li>
+                        <li><a href="informacje-prawne.html" class="active">Informacje prawne</a></li>
+                        <li><a href="index.html#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Informacje wymagane prawem</h1>
+            <p>Zgodnie z art. 300 ustawy Prawo komunikacji elektronicznej</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main>
+        <!-- 1. Dane Operatora -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>1. Dane Operatora i dane kontaktowe</h2>
+
+                    <table>
+                        <tr>
+                            <th style="width: 200px;">Nazwa</th>
+                            <td><strong>Mobilna Kraina EDEN Witold Perucki</strong></td>
+                        </tr>
+                        <tr>
+                            <th>Adres siedziby</th>
+                            <td>ul. Mickiewicza 14, 46-200 Kluczbork</td>
+                        </tr>
+                        <tr>
+                            <th>Punkt obsługi</th>
+                            <td>ul. Wałowa 30, 46-220 Byczyna</td>
+                        </tr>
+                        <tr>
+                            <th>NIP</th>
+                            <td>751-123-00-41</td>
+                        </tr>
+                        <tr>
+                            <th>REGON</th>
+                            <td>531342360</td>
+                        </tr>
+                        <tr>
+                            <th>Telefon stacjonarny</th>
+                            <td>77 414 24 88</td>
+                        </tr>
+                        <tr>
+                            <th>Telefon komórkowy</th>
+                            <td>+48 601 718 675</td>
+                        </tr>
+                        <tr>
+                            <th>Adres e-mail</th>
+                            <td><a href="mailto:eden@mobilnakraina.pl">eden@mobilnakraina.pl</a></td>
+                        </tr>
+                        <tr>
+                            <th>Strona internetowa</th>
+                            <td><a href="https://www.tvkeden.pl">www.tvkeden.pl</a></td>
+                        </tr>
+                    </table>
+
+                    <h3>Godziny pracy Biura Obsługi Abonenta</h3>
+                    <p>Poniedziałek - Piątek: 8:00 - 16:00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Oferowane usługi -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>2. Oferowane usługi</h2>
+
+                    <p>Operator świadczy następujące usługi telekomunikacyjne:</p>
+                    <ul>
+                        <li><strong>Usługa dostępu do internetu</strong> - stacjonarny dostęp do sieci Internet</li>
+                        <li><strong>Usługa telewizji kablowej</strong> - dostarczanie sygnału telewizyjnego</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>Informacja:</strong> Operator nie świadczy usług komunikacji interpersonalnej, w tym usług telefonicznych ani usług komunikatorów internetowych.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Parametry usługi internetu -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>3. Główne cechy usługi dostępu do internetu</h2>
+
+                    <p>Poniżej przedstawiono parametry jakości dla poszczególnych pakietów usługi dostępu do internetu:</p>
+
+                    <h3>Pakiet I</h3>
+                    <table>
+                        <tr>
+                            <th>Parametr</th>
+                            <th>Pobieranie (do abonenta)</th>
+                            <th>Wysyłanie (od abonenta)</th>
+                        </tr>
+                        <tr>
+                            <td>Prędkość maksymalna</td>
+                            <td class="speed-value">10 Mb/s</td>
+                            <td class="speed-value">1 Mb/s</td>
+                        </tr>
+                        <tr>
+                            <td>Prędkość minimalna (gwarantowana)</td>
+                            <td class="speed-value">5 Mb/s</td>
+                            <td class="speed-value">0,5 Mb/s</td>
+                        </tr>
+                        <tr>
+                            <td>Prędkość zwykle dostępna (90% doby)</td>
+                            <td class="speed-value">7 Mb/s</td>
+                            <td class="speed-value">0,7 Mb/s</td>
+                        </tr>
+                    </table>
+
+                    <h3>Pakiet II</h3>
+                    <table>
+                        <tr>
+                            <th>Parametr</th>
+                            <th>Pobieranie (do abonenta)</th>
+                            <th>Wysyłanie (od abonenta)</th>
+                        </tr>
+                        <tr>
+                            <td>Prędkość maksymalna</td>
+                            <td class="speed-value">30 Mb/s</td>
+                            <td class="speed-value">3 Mb/s</td>
+                        </tr>
+                        <tr>
+                            <td>Prędkość minimalna (gwarantowana)</td>
+                            <td class="speed-value">15 Mb/s</td>
+                            <td class="speed-value">1,5 Mb/s</td>
+                        </tr>
+                        <tr>
+                            <td>Prędkość zwykle dostępna (90% doby)</td>
+                            <td class="speed-value">21 Mb/s</td>
+                            <td class="speed-value">2,1 Mb/s</td>
+                        </tr>
+                    </table>
+
+                    <h3>Pakiet III</h3>
+                    <table>
+                        <tr>
+                            <th>Parametr</th>
+                            <th>Pobieranie (do abonenta)</th>
+                            <th>Wysyłanie (od abonenta)</th>
+                        </tr>
+                        <tr>
+                            <td>Prędkość maksymalna</td>
+                            <td class="speed-value">60 Mb/s</td>
+                            <td class="speed-value">6 Mb/s</td>
+                        </tr>
+                        <tr>
+                            <td>Prędkość minimalna (gwarantowana)</td>
+                            <td class="speed-value">30 Mb/s</td>
+                            <td class="speed-value">3 Mb/s</td>
+                        </tr>
+                        <tr>
+                            <td>Prędkość zwykle dostępna (90% doby)</td>
+                            <td class="speed-value">42 Mb/s</td>
+                            <td class="speed-value">4,2 Mb/s</td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <strong>Objaśnienia:</strong>
+                        <ul style="margin-bottom: 0;">
+                            <li><strong>Prędkość minimalna</strong> - najniższa gwarantowana prędkość, stanowiąca nie mniej niż 50% prędkości maksymalnej</li>
+                            <li><strong>Prędkość maksymalna</strong> - najwyższa prędkość, jaka może być osiągnięta w sprzyjających warunkach</li>
+                            <li><strong>Prędkość zwykle dostępna</strong> - prędkość dostępna przez co najmniej 90% doby, stanowiąca nie mniej niż 70% prędkości maksymalnej</li>
+                        </ul>
+                    </div>
+
+                    <h3>Dodatkowe informacje</h3>
+                    <ul>
+                        <li><strong>Limit transmisji danych:</strong> Brak - wszystkie pakiety bez limitu danych</li>
+                        <li><strong>Technologia:</strong> Sieć kablowa (HFC)</li>
+                        <li><strong>Obszar dostępności:</strong> Kluczbork, Byczyna i okolice</li>
+                    </ul>
+
+                    <h3>Czynniki wpływające na prędkość</h3>
+                    <p>Na faktycznie osiąganą prędkość mogą mieć wpływ:</p>
+                    <ul>
+                        <li>Obciążenie sieci w godzinach szczytu</li>
+                        <li>Parametry urządzenia końcowego (komputer, router WiFi)</li>
+                        <li>Oprogramowanie zainstalowane na urządzeniu (antywirus, firewall)</li>
+                        <li>Jednoczesne korzystanie z wielu urządzeń</li>
+                        <li>Ograniczenia po stronie dostawców treści</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Usługa telewizji -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>4. Główne cechy usługi telewizji kablowej</h2>
+
+                    <h3>Pakiet Standard</h3>
+                    <p>Lista programów dostępnych w pakiecie Standard:</p>
+
+                    <div class="tv-channels">
+                        <div class="tv-channel">TVP1</div>
+                        <div class="tv-channel">TVP2</div>
+                        <div class="tv-channel">TVP3 Opole</div>
+                        <div class="tv-channel">TVP Info</div>
+                        <div class="tv-channel">TVP Kultura</div>
+                        <div class="tv-channel">TVP Historia</div>
+                        <div class="tv-channel">TVP Sport</div>
+                        <div class="tv-channel">Polsat</div>
+                        <div class="tv-channel">Polsat 2</div>
+                        <div class="tv-channel">Polsat News</div>
+                        <div class="tv-channel">TVN</div>
+                        <div class="tv-channel">TVN7</div>
+                        <div class="tv-channel">TV4</div>
+                        <div class="tv-channel">TV6</div>
+                        <div class="tv-channel">TV Puls</div>
+                        <div class="tv-channel">TV Puls 2</div>
+                        <div class="tv-channel">Stopklatka TV</div>
+                        <div class="tv-channel">Fokus TV</div>
+                        <div class="tv-channel">Nowa TV</div>
+                        <div class="tv-channel">Zoom TV</div>
+                        <div class="tv-channel">TTV</div>
+                        <div class="tv-channel">Polo TV</div>
+                        <div class="tv-channel">Eska TV</div>
+                        <div class="tv-channel">TVP ABC</div>
+                        <div class="tv-channel">Nickelodeon</div>
+                        <div class="tv-channel">Cartoon Network</div>
+                        <div class="tv-channel">Discovery Channel</div>
+                        <div class="tv-channel">National Geographic</div>
+                        <div class="tv-channel">Polsat Sport</div>
+                        <div class="tv-channel">Eurosport 1</div>
+                    </div>
+
+                    <p><em>Lista programów może ulec zmianie. Aktualna lista dostępna w Biurze Obsługi Abonenta.</em></p>
+
+                    <h3>Warunki techniczne</h3>
+                    <ul>
+                        <li><strong>Sposób dostarczania sygnału:</strong> Sieć kablowa</li>
+                        <li><strong>Wymagane urządzenie:</strong> Telewizor z tunerem DVB-C lub dekoder</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>Wskaźniki jakości dla usługi telewizji:</strong> Dla usługi telewizji kablowej brak jest minimalnych poziomów jakości usługi, poza wskaźnikami wspólnymi dla wszystkich usług wskazanymi w sekcji dotyczącej obsługi klienta.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Urządzenia -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>5. Informacje o urządzeniach</h2>
+
+                    <h3>Modem internetowy</h3>
+                    <p>Operator udostępnia abonentom modem niezbędny do korzystania z usługi dostępu do internetu.</p>
+
+                    <table>
+                        <tr>
+                            <th>Rodzaj opłaty</th>
+                            <th>Kwota</th>
+                        </tr>
+                        <tr>
+                            <td>Miesięczna opłata za udostępnienie modemu</td>
+                            <td class="speed-value">1,23 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Opłata za niezwrócenie modemu po zakończeniu umowy</td>
+                            <td class="speed-value">160 zł</td>
+                        </tr>
+                    </table>
+
+                    <h3>Warunki korzystania z urządzeń</h3>
+                    <ul>
+                        <li>Modem pozostaje własnością Operatora</li>
+                        <li>Abonent zobowiązany jest do zwrotu modemu w stanie niepogorszonym po zakończeniu umowy</li>
+                        <li>W przypadku uszkodzenia lub niezwrócenia modemu pobierana jest opłata w wysokości 160 zł</li>
+                        <li>Operator nie stosuje ograniczeń w zakresie korzystania z urządzenia końcowego (komputera, routera WiFi)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Ceny -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>6. Ceny usług</h2>
+
+                    <p>Pełny cennik dostępny jest na stronie <a href="cennik.html">Cennik</a> oraz w dokumencie do pobrania.</p>
+
+                    <h3>Opłaty abonamentowe</h3>
+                    <table>
+                        <tr>
+                            <th>Usługa</th>
+                            <th>Opłata miesięczna</th>
+                        </tr>
+                        <tr>
+                            <td>Telewizja kablowa - Pakiet Standard</td>
+                            <td class="speed-value">35 zł / 40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Internet - Pakiet I</td>
+                            <td class="speed-value">30,25 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Internet - Pakiet II</td>
+                            <td class="speed-value">40,33 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Internet - Pakiet III</td>
+                            <td class="speed-value">50,41 zł</td>
+                        </tr>
+                        <tr>
+                            <td>TV + Internet Pakiet I</td>
+                            <td class="speed-value">70,25 zł</td>
+                        </tr>
+                        <tr>
+                            <td>TV + Internet Pakiet II</td>
+                            <td class="speed-value">80,33 zł</td>
+                        </tr>
+                        <tr>
+                            <td>TV + Internet Pakiet III</td>
+                            <td class="speed-value">90,41 zł</td>
+                        </tr>
+                    </table>
+
+                    <h3>Opłaty instalacyjne</h3>
+                    <table>
+                        <tr>
+                            <th>Rodzaj opłaty</th>
+                            <th>Kwota</th>
+                        </tr>
+                        <tr>
+                            <td>Przyłączenie do sieci - budynek wielorodzinny</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Przyłączenie do sieci - budynek jednorodzinny</td>
+                            <td>300 zł</td>
+                        </tr>
+                    </table>
+
+                    <p><a href="dokumenty/Cennik_uslug.docx" class="btn btn-primary" download>Pobierz pełny cennik (DOCX)</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Warunki umowy -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>7. Standardowe warunki umowy</h2>
+
+                    <h3>Okres obowiązywania umowy</h3>
+                    <p>Umowy zawierane są na <strong>czas nieokreślony</strong>.</p>
+
+                    <h3>Wypowiedzenie umowy przez Abonenta</h3>
+                    <ul>
+                        <li>W każdym czasie, z zachowaniem <strong>miesięcznego okresu wypowiedzenia</strong></li>
+                        <li>Ze skutkiem natychmiastowym, jeśli:
+                            <ul>
+                                <li>Występują znaczące, stałe lub częste rozbieżności między rzeczywistym wykonaniem usług a warunkami umowy</li>
+                                <li>Abonent chce zmienić dostawcę usługi internetu</li>
+                                <li>Operator dokona jednostronnej zmiany postanowień umowy, której Abonent nie akceptuje</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Wypowiedzenie umowy przez Operatora</h3>
+                    <p>Ze skutkiem natychmiastowym, po uprzednim wezwaniu i udzieleniu dodatkowego terminu na usunięcie naruszeń, jeśli:</p>
+                    <ul>
+                        <li>Abonent nie uiszcza terminowo opłat</li>
+                        <li>Abonent narusza warunki korzystania z usługi</li>
+                    </ul>
+
+                    <h3>Rezygnacja z oferty wiązanej</h3>
+                    <p>W przypadku gdy Abonentowi przysługuje prawo do wypowiedzenia umowy ze względu na niewykonanie lub nienależyte wykonanie umowy, uprawnienie to obejmuje wszystkie usługi objęte umową.</p>
+
+                    <div class="highlight-box">
+                        <strong>Uwaga:</strong> Operator nie świadczy usług wykorzystujących numery telefoniczne, dlatego procedury przenoszenia numerów nie mają zastosowania.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Obsługa klienta -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>8. Obsługa klienta, serwis i konserwacja</h2>
+
+                    <h3>Biuro Obsługi Abonenta</h3>
+                    <table>
+                        <tr>
+                            <th>Lokalizacja</th>
+                            <th>Adres</th>
+                            <th>Godziny pracy</th>
+                        </tr>
+                        <tr>
+                            <td>Kluczbork (siedziba)</td>
+                            <td>ul. Mickiewicza 14, 46-200 Kluczbork</td>
+                            <td>Pon-Pt: 8:00 - 16:00</td>
+                        </tr>
+                        <tr>
+                            <td>Byczyna</td>
+                            <td>ul. Wałowa 30, 46-220 Byczyna</td>
+                            <td>Pon-Pt: 8:00 - 16:00</td>
+                        </tr>
+                    </table>
+
+                    <h3>Wskaźniki jakości obsługi</h3>
+                    <table>
+                        <tr>
+                            <th>Parametr</th>
+                            <th>Wartość</th>
+                        </tr>
+                        <tr>
+                            <td>Czas oczekiwania na przyłączenie do sieci</td>
+                            <td><strong>5 dni</strong> (włącznie z dniami wolnymi)</td>
+                        </tr>
+                        <tr>
+                            <td>Czas oczekiwania na połączenie z personelem (dni robocze)</td>
+                            <td>do <strong>3660 sekund</strong> (ok. 61 min)</td>
+                        </tr>
+                        <tr>
+                            <td>Czas oczekiwania na połączenie z personelem (dni wolne)</td>
+                            <td>do <strong>7320 sekund</strong> (ok. 122 min)</td>
+                        </tr>
+                        <tr>
+                            <td>Czas usunięcia awarii</td>
+                            <td><strong>48 godzin</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Wskaźnik reklamacji poprawności faktur</td>
+                            <td><strong>0%</strong></td>
+                        </tr>
+                    </table>
+
+                    <h3>Zgłaszanie awarii</h3>
+                    <ul>
+                        <li>Telefonicznie: <strong>77 414 24 88</strong> lub <strong>+48 601 718 675</strong></li>
+                        <li>E-mail: <a href="mailto:eden@mobilnakraina.pl">eden@mobilnakraina.pl</a></li>
+                        <li>Osobiście w Biurze Obsługi Abonenta</li>
+                    </ul>
+
+                    <h3>Usługi serwisowe</h3>
+                    <table>
+                        <tr>
+                            <th>Usługa</th>
+                            <th>Opłata</th>
+                        </tr>
+                        <tr>
+                            <td>Dostrojenie urządzenia końcowego Abonenta</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Godzina pracy technika (prace nieobjęte bezpłatną obsługą)</td>
+                            <td>45 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Opłata za zawieszenie usługi na życzenie Abonenta</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Opłata za wznowienie usługi po zawieszeniu</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Przeniesienie praw i obowiązków z umowy na inną osobę</td>
+                            <td>45 zł</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Reklamacje -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>9. Procedura reklamacyjna</h2>
+
+                    <h3>Sposób składania reklamacji</h3>
+                    <p>Reklamację można złożyć:</p>
+                    <ul>
+                        <li><strong>Pisemnie</strong> - na adres: Mobilna Kraina EDEN Witold Perucki, ul. Mickiewicza 14, 46-200 Kluczbork</li>
+                        <li><strong>E-mailem</strong> - na adres: <a href="mailto:eden@mobilnakraina.pl">eden@mobilnakraina.pl</a></li>
+                        <li><strong>Osobiście</strong> - w Biurze Obsługi Abonenta</li>
+                        <li><strong>Telefonicznie</strong> - pod numerem 77 414 24 88 lub +48 601 718 675</li>
+                    </ul>
+
+                    <h3>Treść reklamacji</h3>
+                    <p>Reklamacja powinna zawierać:</p>
+                    <ul>
+                        <li>Imię i nazwisko oraz adres zamieszkania Abonenta</li>
+                        <li>Określenie przedmiotu reklamacji oraz reklamowanego okresu</li>
+                        <li>Przedstawienie okoliczności uzasadniających reklamację</li>
+                        <li>Numer umowy lub adres świadczenia usługi</li>
+                        <li>Datę zawarcia umowy i określenie terminu rozpoczęcia świadczenia usługi</li>
+                        <li>Wysokość odszkodowania lub kwoty innej należności (jeśli dotyczy)</li>
+                        <li>Numer konta bankowego lub adres właściwy do wypłaty (jeśli dotyczy)</li>
+                        <li>Podpis Abonenta (w przypadku reklamacji pisemnej)</li>
+                    </ul>
+
+                    <h3>Terminy</h3>
+                    <ul>
+                        <li>Reklamację można złożyć w terminie <strong>12 miesięcy</strong> od ostatniego dnia okresu rozliczeniowego, którego dotyczy</li>
+                        <li>Operator rozpatruje reklamację w terminie <strong>30 dni</strong> od dnia jej złożenia</li>
+                        <li>Odpowiedź na reklamację wymaga formy pisemnej</li>
+                    </ul>
+
+                    <h3>Środki ochrony prawnej</h3>
+                    <p>W przypadku nieuwzględnienia reklamacji lub jej części, Abonent może:</p>
+                    <ul>
+                        <li>Dochodzić roszczeń przed <strong>sądem powszechnym</strong></li>
+                        <li>Skorzystać z postępowania w sprawie <strong>pozasądowego rozwiązywania sporów konsumenckich</strong> prowadzonego przed Prezesem Urzędu Komunikacji Elektronicznej</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>Rozbieżności jakości usługi:</strong> W przypadku stałych lub regularnie powtarzających się istotnych rozbieżności pomiędzy faktycznym wykonaniem usługi a parametrami określonymi w umowie, Abonent może żądać zwrotu części uiszczonej opłaty abonamentowej proporcjonalnie do okresu, w którym występowały rozbieżności.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Rozstrzyganie sporów -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>10. Rozstrzyganie sporów</h2>
+
+                    <p>Spory między Abonentem a Operatorem mogą być rozstrzygane:</p>
+
+                    <h3>Postępowanie reklamacyjne</h3>
+                    <p>W pierwszej kolejności zalecamy skorzystanie z procedury reklamacyjnej opisanej powyżej.</p>
+
+                    <h3>Postępowanie przed Prezesem UKE</h3>
+                    <p>Abonent będący konsumentem może skorzystać z postępowania w sprawie pozasądowego rozwiązywania sporów konsumenckich prowadzonego przez:</p>
+                    <p><strong>Prezes Urzędu Komunikacji Elektronicznej</strong><br>
+                    ul. Giełdowa 7/9<br>
+                    01-211 Warszawa<br>
+                    <a href="https://www.uke.gov.pl" target="_blank">www.uke.gov.pl</a></p>
+
+                    <h3>Postępowanie sądowe</h3>
+                    <p>Abonent może dochodzić swoich roszczeń przed sądem powszechnym właściwym dla miejsca zamieszkania Abonenta lub siedziby Operatora.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Dostępność -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>11. Udogodnienia dla użytkowników z niepełnosprawnościami</h2>
+
+                    <p>Operator zapewnia następujące udogodnienia dla osób z niepełnosprawnościami:</p>
+
+                    <ul>
+                        <li><strong>Dostępność Biura Obsługi Abonenta</strong> - lokale BOA są dostępne dla osób z niepełnosprawnością narządu ruchu</li>
+                        <li><strong>Komunikacja alternatywna</strong> - stanowiska BOA są wyposażone w urządzenia umożliwiające komunikację z osobami z niepełnosprawnością narządu wzroku, słuchu lub mowy</li>
+                        <li><strong>Dostępność strony internetowej</strong> - strona jest dostosowana do potrzeb osób z niepełnosprawnościami</li>
+                    </ul>
+
+                    <h3>Kontakt dla osób z niepełnosprawnościami</h3>
+                    <p>Osoby wymagające szczególnej pomocy mogą kontaktować się:</p>
+                    <ul>
+                        <li>E-mailem: <a href="mailto:eden@mobilnakraina.pl">eden@mobilnakraina.pl</a></li>
+                        <li>SMS na numer: +48 601 718 675</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Deklaracja dostępności -->
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-box">
+                    <h2>12. Deklaracja dostępności</h2>
+
+                    <p><strong>Mobilna Kraina EDEN Witold Perucki</strong> zobowiązuje się zapewnić dostępność swojej strony internetowej zgodnie z przepisami ustawy z dnia 4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów publicznych oraz wytycznymi WCAG 2.1.</p>
+
+                    <h3>Status zgodności</h3>
+                    <p>Strona internetowa <strong>www.tvkeden.pl</strong> jest częściowo zgodna z wytycznymi WCAG 2.1 na poziomie AA. Trwają prace nad pełnym dostosowaniem strony.</p>
+
+                    <h3>Dostępne funkcje</h3>
+                    <ul>
+                        <li>Nawigacja za pomocą klawiatury</li>
+                        <li>Odpowiedni kontrast tekstu</li>
+                        <li>Możliwość powiększenia tekstu</li>
+                        <li>Opisy alternatywne dla obrazów</li>
+                        <li>Czytelna struktura nagłówków</li>
+                        <li>Treści prezentowane jako tekst HTML (odczyt maszynowy)</li>
+                    </ul>
+
+                    <h3>Informacje zwrotne i dane kontaktowe</h3>
+                    <p>W przypadku problemów z dostępnością strony prosimy o kontakt:</p>
+                    <ul>
+                        <li>E-mail: <a href="mailto:eden@mobilnakraina.pl">eden@mobilnakraina.pl</a></li>
+                        <li>Telefon: 77 414 24 88</li>
+                    </ul>
+
+                    <h3>Data sporządzenia deklaracji</h3>
+                    <p>Deklarację sporządzono dnia: <strong>23 czerwca 2026 r.</strong></p>
+                    <p>Deklarację sporządzono na podstawie samooceny przeprowadzonej przez Operatora.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>O nas</h4>
+                    <p>TVK EDEN to lokalny dostawca telewizji kablowej i internetu w Kluczborku i Byczynie.</p>
+                    <p style="margin-top: 10px;"><small>NIP: 751-123-00-41<br>REGON: 531342360</small></p>
+                </div>
+                <div>
+                    <h4>Szybkie linki</h4>
+                    <ul>
+                        <li><a href="index.html">Strona Główna</a></li>
+                        <li><a href="cennik.html">Cennik</a></li>
+                        <li><a href="dokumenty.html">Dokumenty</a></li>
+                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontakt</h4>
+                    <p>Tel: 77 414 24 88<br>Kom: +48 601 718 675</p>
+                    <p>eden@mobilnakraina.pl</p>
+                </div>
+                <div>
+                    <h4>Lokalizacje</h4>
+                    <p>ul. Mickiewicza 14<br>46-200 Kluczbork</p>
+                    <p>ul. Wałowa 30<br>46-220 Byczyna</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mobilna Kraina Eden Witold Perucki. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

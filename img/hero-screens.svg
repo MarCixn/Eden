@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 700">
+  <defs>
+    <!-- Gradienty dla ekranów -->
+    <linearGradient id="screen1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#ee5a5a"/>
+    </linearGradient>
+    <linearGradient id="screen2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecdc4"/>
+      <stop offset="100%" style="stop-color:#44a08d"/>
+    </linearGradient>
+    <linearGradient id="screen3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="screen4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb"/>
+      <stop offset="100%" style="stop-color:#f5576c"/>
+    </linearGradient>
+    <linearGradient id="screen5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe"/>
+      <stop offset="100%" style="stop-color:#00f2fe"/>
+    </linearGradient>
+    <linearGradient id="screen6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#43e97b"/>
+      <stop offset="100%" style="stop-color:#38f9d7"/>
+    </linearGradient>
+    <linearGradient id="screen7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a"/>
+      <stop offset="100%" style="stop-color:#fee140"/>
+    </linearGradient>
+    <linearGradient id="screen8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea"/>
+      <stop offset="100%" style="stop-color:#fed6e3"/>
+    </linearGradient>
+    <linearGradient id="screen9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9a9e"/>
+      <stop offset="100%" style="stop-color:#fecfef"/>
+    </linearGradient>
+    <linearGradient id="screen10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a18cd1"/>
+      <stop offset="100%" style="stop-color:#fbc2eb"/>
+    </linearGradient>
+    <linearGradient id="screen11" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffecd2"/>
+      <stop offset="100%" style="stop-color:#fcb69f"/>
+    </linearGradient>
+    <linearGradient id="screen12" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tło -->
+  <rect fill="#1a1a2e" width="1920" height="700"/>
+
+  <!-- Rząd 1 - ekrany TV -->
+  <g transform="translate(0, 20)">
+    <!-- Ekran 1 -->
+    <rect x="50" y="30" width="280" height="160" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="55" y="35" width="270" height="150" rx="3" fill="url(#screen1)"/>
+    <rect x="55" y="35" width="270" height="150" rx="3" fill="url(#screen1)" opacity="0.9"/>
+
+    <!-- Ekran 2 -->
+    <rect x="350" y="50" width="320" height="180" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="355" y="55" width="310" height="170" rx="3" fill="url(#screen2)"/>
+
+    <!-- Ekran 3 -->
+    <rect x="690" y="20" width="260" height="150" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="695" y="25" width="250" height="140" rx="3" fill="url(#screen3)"/>
+
+    <!-- Ekran 4 -->
+    <rect x="970" y="40" width="300" height="170" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="975" y="45" width="290" height="160" rx="3" fill="url(#screen4)"/>
+
+    <!-- Ekran 5 -->
+    <rect x="1290" y="10" width="280" height="160" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1295" y="15" width="270" height="150" rx="3" fill="url(#screen5)"/>
+
+    <!-- Ekran 6 -->
+    <rect x="1590" y="50" width="300" height="170" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1595" y="55" width="290" height="160" rx="3" fill="url(#screen6)"/>
+  </g>
+
+  <!-- Rząd 2 - ekrany TV -->
+  <g transform="translate(0, 220)">
+    <!-- Ekran 7 -->
+    <rect x="20" y="30" width="300" height="170" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="25" y="35" width="290" height="160" rx="3" fill="url(#screen7)"/>
+
+    <!-- Ekran 8 -->
+    <rect x="340" y="10" width="260" height="150" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="345" y="15" width="250" height="140" rx="3" fill="url(#screen8)"/>
+
+    <!-- Ekran 9 - większy centralny -->
+    <rect x="620" y="0" width="380" height="220" rx="5" fill="#111" stroke="#444" stroke-width="3"/>
+    <rect x="628" y="8" width="364" height="204" rx="3" fill="url(#screen9)"/>
+
+    <!-- Ekran 10 -->
+    <rect x="1020" y="20" width="280" height="160" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1025" y="25" width="270" height="150" rx="3" fill="url(#screen10)"/>
+
+    <!-- Ekran 11 -->
+    <rect x="1320" y="40" width="300" height="170" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1325" y="45" width="290" height="160" rx="3" fill="url(#screen11)"/>
+
+    <!-- Ekran 12 -->
+    <rect x="1640" y="10" width="260" height="150" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1645" y="15" width="250" height="140" rx="3" fill="url(#screen12)"/>
+  </g>
+
+  <!-- Rząd 3 - ekrany TV -->
+  <g transform="translate(0, 440)">
+    <!-- Ekran 13 -->
+    <rect x="80" y="20" width="320" height="180" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="85" y="25" width="310" height="170" rx="3" fill="url(#screen3)"/>
+
+    <!-- Ekran 14 -->
+    <rect x="420" y="40" width="280" height="160" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="425" y="45" width="270" height="150" rx="3" fill="url(#screen1)"/>
+
+    <!-- Ekran 15 -->
+    <rect x="720" y="10" width="300" height="170" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="725" y="15" width="290" height="160" rx="3" fill="url(#screen5)"/>
+
+    <!-- Ekran 16 -->
+    <rect x="1040" y="30" width="260" height="150" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1045" y="35" width="250" height="140" rx="3" fill="url(#screen7)"/>
+
+    <!-- Ekran 17 -->
+    <rect x="1320" y="0" width="300" height="170" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1325" y="5" width="290" height="160" rx="3" fill="url(#screen2)"/>
+
+    <!-- Ekran 18 -->
+    <rect x="1640" y="40" width="260" height="150" rx="5" fill="#111" stroke="#333" stroke-width="2"/>
+    <rect x="1645" y="45" width="250" height="140" rx="3" fill="url(#screen4)"/>
+  </g>
+
+  <!-- Efekt świecenia/odblasku -->
+  <rect x="0" y="0" width="1920" height="700" fill="url(#screenGlow)" opacity="0.1"/>
+
+  <!-- Sygnał WiFi w prawym górnym rogu -->
+  <g transform="translate(1750, 80)" opacity="0.3">
+    <path d="M0 30 Q15 15 30 30" fill="none" stroke="#E91E8C" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-10 20 Q15 0 40 20" fill="none" stroke="#E91E8C" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-20 10 Q15 -15 50 10" fill="none" stroke="#E91E8C" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="15" cy="35" r="5" fill="#E91E8C"/>
+  </g>
+
+  <!-- Sygnał WiFi w lewym dolnym rogu -->
+  <g transform="translate(80, 580)" opacity="0.2">
+    <path d="M0 30 Q15 15 30 30" fill="none" stroke="#E91E8C" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-10 20 Q15 0 40 20" fill="none" stroke="#E91E8C" stroke-width="3" stroke-linecap="round"/>
+    <path d="M-20 10 Q15 -15 50 10" fill="none" stroke="#E91E8C" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="15" cy="35" r="5" fill="#E91E8C"/>
+  </g>
+</svg>
