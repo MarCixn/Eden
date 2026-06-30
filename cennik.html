@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<\!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -16,9 +16,16 @@
         .pricing-table tr:hover { background: #f9f9f9; }
         .price-highlight { color: var(--primary); font-weight: 700; font-size: 18px; }
         .section-subtitle { color: var(--primary); font-size: 24px; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
-        .city-section { background: var(--light-gray); padding: 40px; border-radius: 15px; margin: 40px 0; }
-        .city-section h2 { color: var(--primary); font-size: 28px; margin-bottom: 20px; text-align: center; }
-        .city-section h3 { color: var(--dark); font-size: 20px; margin: 30px 0 10px; }
+        .city-tabs { display: flex; justify-content: center; margin-bottom: 30px; gap: 0; }
+        .city-tab { padding: 20px 60px; font-size: 22px; font-weight: 700; cursor: pointer; border: 3px solid var(--primary); background: white; color: var(--primary); transition: all 0.3s ease; }
+        .city-tab:first-child { border-radius: 10px 0 0 10px; }
+        .city-tab:last-child { border-radius: 0 10px 10px 0; border-left: none; }
+        .city-tab:hover { background: #fce4ec; }
+        .city-tab.active { background: var(--primary); color: white; }
+        .city-content { display: none; background: var(--light-gray); padding: 40px; border-radius: 15px; margin: 20px 0; }
+        .city-content.active { display: block; }
+        .city-content h3 { color: var(--dark); font-size: 20px; margin: 30px 0 10px; }
+        .city-content h3:first-child { margin-top: 0; }
         .note { background: var(--light-gray); padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 14px; color: var(--gray); }
     </style>
 </head>
@@ -27,13 +34,87 @@
     <header class="header"><div class="header-top"><div class="container"><span>Tel: +48 601 718 675 | eden@mobilnakraina.pl</span><span>Pon-Pt: 8:00 - 16:00</span></div></div><div class="header-main"><div class="container"><a href="index.html" class="logo"><img src="img/logo.png" alt="EDEN"></a><nav class="nav"><button class="mobile-menu-btn" onclick="toggleMenu()"><svg class="icon"><use href="#icon-menu"/></svg></button><ul id="nav-menu"><li><a href="index.html">Strona Główna</a></li><li><a href="index.html#usługi">Oferta</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li><li><a href="informacje-prawne.html">Informacje prawne</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></nav></div></div></header>
     <section class="page-header"><div class="container"><h1>Cennik usług</h1><p>Przejrzyste ceny bez ukrytych kosztów</p></div></section>
     <section class="pricing-section"><div class="container">
-    <div class="city-section"><h2>Kluczbork</h2><h3>usługa telewizji</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr><tr><td>Pakiet Standard</td><td>na czas nieokreślony</td><td class="price-highlight">35 zl / miesiąc</td></tr></table><h3>usługa internetu</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr><tr><td>Pakiet I</td><td>na czas nieokreślony</td><td class="price-highlight">30,25 zl / miesiąc</td></tr><tr><td>Pakiet II</td><td>na czas nieokreślony</td><td class="price-highlight">40,33 zl / miesiąc</td></tr><tr><td>Pakiet III</td><td>na czas nieokreślony</td><td class="price-highlight">50,41 zl / miesiąc</td></tr><tr><td>Udostępnienie modemu</td><td>-</td><td class="price-highlight">1,23 zl / miesiąc</td></tr></table><h3>Pakiety łączone (TV + Internet)</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr><tr><td>TV Standard + Internet I</td><td>na czas nieokreślony</td><td class="price-highlight">70,25 zl / miesiąc</td></tr><tr><td>TV Standard + Internet II</td><td>na czas nieokreślony</td><td class="price-highlight">80,33 zl / miesiąc</td></tr><tr><td>TV Standard + Internet III</td><td>na czas nieokreślony</td><td class="price-highlight">90,41 zl / miesiąc</td></tr></table></div>
-    <div class="city-section"><h2>Byczyna</h2><h3>usługa telewizji</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr><tr><td>Pakiet Standard</td><td>na czas nieokreślony</td><td class="price-highlight">40 zl / miesiąc</td></tr></table><h3>usługa internetu</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr><tr><td>Pakiet I</td><td>na czas nieokreślony</td><td class="price-highlight">30,25 zl / miesiąc</td></tr><tr><td>Pakiet II</td><td>na czas nieokreślony</td><td class="price-highlight">40,33 zl / miesiąc</td></tr><tr><td>Pakiet III</td><td>na czas nieokreślony</td><td class="price-highlight">50,41 zl / miesiąc</td></tr><tr><td>Udostępnienie modemu</td><td>-</td><td class="price-highlight">1,23 zl / miesiąc</td></tr></table><h3>Pakiety łączone (TV + Internet)</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr><tr><td>TV Standard + Internet I</td><td>na czas nieokreślony</td><td class="price-highlight">70,25 zl / miesiąc</td></tr><tr><td>TV Standard + Internet II</td><td>na czas nieokreślony</td><td class="price-highlight">80,33 zl / miesiąc</td></tr><tr><td>TV Standard + Internet III</td><td>na czas nieokreślony</td><td class="price-highlight">90,41 zl / miesiąc</td></tr></table></div>
-    <h2 class="section-subtitle">Opłaty instalacyjne</h2><table class="pricing-table"><tr><th>usługa</th><th>Cena</th></tr><tr><td>Przyłączenie lokalu w budynku wielorodzinnym</td><td class="price-highlight">40 zl</td></tr><tr><td>Przyłączenie budynku jednorodzinnego</td><td class="price-highlight">300 zl</td></tr><tr><td>Wznowienie usługi po zawieszeniu</td><td class="price-highlight">40 zl</td></tr></table>
-    <h2 class="section-subtitle">usługi serwisowe</h2><table class="pricing-table"><tr><th>usługa</th><th>Cena</th></tr><tr><td>Dostrojenie urządzenia</td><td class="price-highlight">40 zl</td></tr><tr><td>Godzina pracy technika</td><td class="price-highlight">45 zl</td></tr><tr><td>Zawieszenie usługi na życzenie</td><td class="price-highlight">40 zl</td></tr><tr><td>Przeniesienie praw z Umowy</td><td class="price-highlight">45 zl</td></tr><tr><td>Niezwrócenie modemu</td><td class="price-highlight">160 zl</td></tr></table>
-    <div class="note"><strong>Uwaga:</strong> Pełny cennik dostepny w sekcji <a href="dokumenty.html">Dokumenty</a>.</div>
+
+    <div class="city-tabs">
+        <button class="city-tab active" onclick="showCity('kluczbork', this)">Kluczbork</button>
+        <button class="city-tab" onclick="showCity('byczyna', this)">Byczyna</button>
+    </div>
+
+    <div id="kluczbork" class="city-content active">
+        <h3>Usługa telewizji</h3>
+        <table class="pricing-table">
+            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
+            <tr><td>Pakiet Standard</td><td>na czas nieokreślony</td><td class="price-highlight">35 zł / miesiąc</td></tr>
+        </table>
+        <h3>Usługa internetu</h3>
+        <table class="pricing-table">
+            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
+            <tr><td>Pakiet I</td><td>na czas nieokreślony</td><td class="price-highlight">30,25 zł / miesiąc</td></tr>
+            <tr><td>Pakiet II</td><td>na czas nieokreślony</td><td class="price-highlight">40,33 zł / miesiąc</td></tr>
+            <tr><td>Pakiet III</td><td>na czas nieokreślony</td><td class="price-highlight">50,41 zł / miesiąc</td></tr>
+            <tr><td>Udostępnienie modemu</td><td>-</td><td class="price-highlight">1,23 zł / miesiąc</td></tr>
+        </table>
+        <h3>Pakiety łączone (TV + Internet)</h3>
+        <table class="pricing-table">
+            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
+            <tr><td>TV Standard + Internet I</td><td>na czas nieokreślony</td><td class="price-highlight">70,25 zł / miesiąc</td></tr>
+            <tr><td>TV Standard + Internet II</td><td>na czas nieokreślony</td><td class="price-highlight">80,33 zł / miesiąc</td></tr>
+            <tr><td>TV Standard + Internet III</td><td>na czas nieokreślony</td><td class="price-highlight">90,41 zł / miesiąc</td></tr>
+        </table>
+    </div>
+
+    <div id="byczyna" class="city-content">
+        <h3>Usługa telewizji</h3>
+        <table class="pricing-table">
+            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
+            <tr><td>Pakiet Standard</td><td>na czas nieokreślony</td><td class="price-highlight">40 zł / miesiąc</td></tr>
+        </table>
+        <h3>Usługa internetu</h3>
+        <table class="pricing-table">
+            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
+            <tr><td>Pakiet I</td><td>na czas nieokreślony</td><td class="price-highlight">30,25 zł / miesiąc</td></tr>
+            <tr><td>Pakiet II</td><td>na czas nieokreślony</td><td class="price-highlight">40,33 zł / miesiąc</td></tr>
+            <tr><td>Pakiet III</td><td>na czas nieokreślony</td><td class="price-highlight">50,41 zł / miesiąc</td></tr>
+            <tr><td>Udostępnienie modemu</td><td>-</td><td class="price-highlight">1,23 zł / miesiąc</td></tr>
+        </table>
+        <h3>Pakiety łączone (TV + Internet)</h3>
+        <table class="pricing-table">
+            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
+            <tr><td>TV Standard + Internet I</td><td>na czas nieokreślony</td><td class="price-highlight">70,25 zł / miesiąc</td></tr>
+            <tr><td>TV Standard + Internet II</td><td>na czas nieokreślony</td><td class="price-highlight">80,33 zł / miesiąc</td></tr>
+            <tr><td>TV Standard + Internet III</td><td>na czas nieokreślony</td><td class="price-highlight">90,41 zł / miesiąc</td></tr>
+        </table>
+    </div>
+
+    <h2 class="section-subtitle">Opłaty instalacyjne</h2>
+    <table class="pricing-table">
+        <tr><th>Usługa</th><th>Cena</th></tr>
+        <tr><td>Przyłączenie lokalu w budynku wielorodzinnym</td><td class="price-highlight">40 zł</td></tr>
+        <tr><td>Przyłączenie budynku jednorodzinnego</td><td class="price-highlight">300 zł</td></tr>
+        <tr><td>Wznowienie usługi po zawieszeniu</td><td class="price-highlight">40 zł</td></tr>
+    </table>
+
+    <h2 class="section-subtitle">Usługi serwisowe</h2>
+    <table class="pricing-table">
+        <tr><th>Usługa</th><th>Cena</th></tr>
+        <tr><td>Dostrojenie urządzenia</td><td class="price-highlight">40 zł</td></tr>
+        <tr><td>Godzina pracy technika</td><td class="price-highlight">45 zł</td></tr>
+        <tr><td>Zawieszenie usługi na życzenie</td><td class="price-highlight">40 zł</td></tr>
+        <tr><td>Przeniesienie praw z Umowy</td><td class="price-highlight">45 zł</td></tr>
+        <tr><td>Niezwrócenie modemu</td><td class="price-highlight">160 zł</td></tr>
+    </table>
+
+    <div class="note"><strong>Uwaga:</strong> Pełny cennik dostępny w sekcji <a href="dokumenty.html">Dokumenty</a>.</div>
     </div></section>
     <footer class="footer"><div class="container"><div class="footer-grid"><div><h4>O nas</h4><p>TVK EDEN - telewizja i internet w Kluczborku i Byczynie.</p><p style="margin-top:10px;font-size:12px;color:#888">NIP: 751-123-00-41 | REGON: 531342360</p></div><div><h4>Linki</h4><ul><li><a href="index.html">Strona Główna</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li></ul></div><div><h4>Kontakt</h4><p>ul. Mickiewicza 14, 46-200 Kluczbork</p><p>ul. Wałowa 30, 46-220 Byczyna</p></div></div><div class="footer-bottom"><p>2026 Mobilna Kraina Eden Witold Perucki</p></div></div></footer>
-    <script>function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}</script>
+    <script>
+    function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}
+    function showCity(city, btn){
+        document.querySelectorAll('.city-tab').forEach(function(tab){tab.classList.remove('active');});
+        document.querySelectorAll('.city-content').forEach(function(content){content.classList.remove('active');});
+        document.getElementById(city).classList.add('active');
+        btn.classList.add('active');
+    }
+    </script>
 </body>
 </html>
