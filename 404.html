@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona nie znaleziona - EDEN</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .error-content h1 {
+            font-size: 120px;
+            margin: 0;
+            color: #E91E8C;
+        }
+        .error-content h2 {
+            font-size: 28px;
+            margin: 20px 0;
+        }
+        .error-content p {
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .error-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .error-links a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #E91E8C;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .error-links a:hover {
+            background: #C4177A;
+        }
+        .error-links a.outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        .error-links a.outline:hover {
+            background: white;
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <h1>404</h1>
+            <h2>Strona nie znaleziona</h2>
+            <p>Przepraszamy, strona ktorej szukasz nie istnieje lub zostala przeniesiona.</p>
+            <div class="error-links">
+                <a href="/index.html">Strona glowna</a>
+                <a href="/index.html#kontakt" class="outline">Kontakt</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
