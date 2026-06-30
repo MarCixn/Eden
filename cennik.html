@@ -1,4 +1,4 @@
-<\!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -8,110 +8,385 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <style>
         .page-header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 60px 0; text-align: center; }
-        .page-header h1 { font-size: 36px; }
-        .pricing-section { padding: 60px 0; }
-        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 5px 30px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
-        .pricing-table th { background: var(--dark); color: white; padding: 15px; text-align: left; }
-        .pricing-table td { padding: 15px; border-bottom: 1px solid #eee; }
-        .pricing-table tr:hover { background: #f9f9f9; }
-        .price-highlight { color: var(--primary); font-weight: 700; font-size: 18px; }
-        .section-subtitle { color: var(--primary); font-size: 24px; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
-        .city-tabs { display: flex; justify-content: center; margin-bottom: 30px; gap: 0; }
-        .city-tab { padding: 20px 60px; font-size: 22px; font-weight: 700; cursor: pointer; border: 3px solid var(--primary); background: white; color: var(--primary); transition: all 0.3s ease; }
-        .city-tab:first-child { border-radius: 10px 0 0 10px; }
-        .city-tab:last-child { border-radius: 0 10px 10px 0; border-left: none; }
-        .city-tab:hover { background: #fce4ec; }
-        .city-tab.active { background: var(--primary); color: white; }
-        .city-content { display: none; background: var(--light-gray); padding: 40px; border-radius: 15px; margin: 20px 0; }
+        .page-header h1 { font-size: 42px; margin-bottom: 10px; }
+        .page-header p { font-size: 18px; opacity: 0.9; }
+        
+        .pricing-section { padding: 60px 0; background: #f8f9fa; }
+        
+        /* City Switcher */
+        .city-switcher { display: flex; justify-content: center; margin-bottom: 50px; }
+        .city-switcher-inner { display: flex; background: white; border-radius: 50px; padding: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .city-btn { padding: 15px 40px; font-size: 18px; font-weight: 600; border: none; background: transparent; color: var(--gray); cursor: pointer; border-radius: 50px; transition: all 0.3s ease; }
+        .city-btn.active { background: var(--primary); color: white; }
+        .city-btn:hover:not(.active) { color: var(--primary); }
+        
+        .city-content { display: none; }
         .city-content.active { display: block; }
-        .city-content h3 { color: var(--dark); font-size: 20px; margin: 30px 0 10px; }
-        .city-content h3:first-child { margin-top: 0; }
-        .note { background: var(--light-gray); padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 14px; color: var(--gray); }
+        
+        /* Package Cards */
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        
+        .package-card { background: white; border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; }
+        .package-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .package-card.featured { border: 3px solid var(--primary); }
+        .package-card.featured::before { content: "Popularne"; position: absolute; top: 20px; right: -35px; background: var(--primary); color: white; padding: 8px 40px; font-size: 12px; font-weight: 700; transform: rotate(45deg); text-transform: uppercase; }
+        
+        .package-icon { width: 80px; height: 80px; margin: 0 auto 20px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .package-icon svg { width: 40px; height: 40px; fill: white; }
+        
+        .package-name { font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+        .package-desc { color: var(--gray); font-size: 14px; margin-bottom: 25px; }
+        
+        .package-price { margin-bottom: 25px; }
+        .package-price .amount { font-size: 48px; font-weight: 800; color: var(--primary); }
+        .package-price .currency { font-size: 24px; font-weight: 600; color: var(--primary); }
+        .package-price .period { font-size: 16px; color: var(--gray); }
+        
+        .package-features { list-style: none; padding: 0; margin: 0 0 30px 0; text-align: left; }
+        .package-features li { padding: 10px 0; border-bottom: 1px solid #eee; color: var(--dark); display: flex; align-items: center; gap: 10px; }
+        .package-features li:last-child { border-bottom: none; }
+        .package-features .check { color: #28a745; font-weight: bold; }
+        
+        .package-btn { display: inline-block; width: 100%; padding: 15px 30px; background: var(--primary); color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; text-decoration: none; }
+        .package-btn:hover { background: var(--primary-dark); }
+        .package-btn.outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .package-btn.outline:hover { background: var(--primary); color: white; }
+        
+        /* Bundle Section */
+        .bundle-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 60px 0; margin: 60px 0; }
+        .bundle-section h2 { color: white; text-align: center; font-size: 32px; margin-bottom: 40px; }
+        .bundle-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .bundle-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
+        .bundle-card h3 { color: white; font-size: 20px; margin-bottom: 15px; }
+        .bundle-card .price { font-size: 36px; font-weight: 800; color: var(--primary); }
+        .bundle-card .price span { font-size: 16px; color: rgba(255,255,255,0.7); }
+        .bundle-card ul { list-style: none; padding: 0; margin: 20px 0; }
+        .bundle-card ul li { color: rgba(255,255,255,0.8); padding: 8px 0; font-size: 14px; }
+        
+        /* Other Fees */
+        .fees-section { padding: 60px 0; }
+        .fees-section h2 { text-align: center; color: var(--dark); font-size: 32px; margin-bottom: 40px; }
+        .fees-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }
+        .fees-table { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.08); }
+        .fees-table h3 { background: var(--dark); color: white; padding: 20px 25px; margin: 0; font-size: 18px; }
+        .fees-table table { width: 100%; border-collapse: collapse; }
+        .fees-table td { padding: 15px 25px; border-bottom: 1px solid #eee; }
+        .fees-table tr:last-child td { border-bottom: none; }
+        .fees-table td:last-child { text-align: right; font-weight: 700; color: var(--primary); }
+        
+        .info-box { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px 25px; border-radius: 0 10px 10px 0; margin-top: 40px; }
+        .info-box p { margin: 0; color: #1565c0; }
+        .info-box a { color: #1565c0; font-weight: 600; }
+        
+        @media (max-width: 768px) {
+            .packages-grid { grid-template-columns: 1fr; }
+            .fees-grid { grid-template-columns: 1fr; }
+            .city-btn { padding: 12px 25px; font-size: 16px; }
+            .package-price .amount { font-size: 36px; }
+        }
     </style>
 </head>
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></symbol></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></symbol>
+        <symbol id="icon-tv" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></symbol>
+        <symbol id="icon-wifi" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></symbol>
+        <symbol id="icon-bundle" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></symbol>
+    </svg>
     <header class="header"><div class="header-top"><div class="container"><span>Tel: +48 601 718 675 | eden@mobilnakraina.pl</span><span>Pon-Pt: 8:00 - 16:00</span></div></div><div class="header-main"><div class="container"><a href="index.html" class="logo"><img src="img/logo.png" alt="EDEN"></a><nav class="nav"><button class="mobile-menu-btn" onclick="toggleMenu()"><svg class="icon"><use href="#icon-menu"/></svg></button><ul id="nav-menu"><li><a href="index.html">Strona Główna</a></li><li><a href="index.html#usługi">Oferta</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li><li><a href="informacje-prawne.html">Informacje prawne</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></nav></div></div></header>
-    <section class="page-header"><div class="container"><h1>Cennik usług</h1><p>Przejrzyste ceny bez ukrytych kosztów</p></div></section>
-    <section class="pricing-section"><div class="container">
 
-    <div class="city-tabs">
-        <button class="city-tab active" onclick="showCity('kluczbork', this)">Kluczbork</button>
-        <button class="city-tab" onclick="showCity('byczyna', this)">Byczyna</button>
-    </div>
+    <section class="page-header">
+        <div class="container">
+            <h1>Cennik usług</h1>
+            <p>Wybierz pakiet dopasowany do Twoich potrzeb</p>
+        </div>
+    </section>
 
-    <div id="kluczbork" class="city-content active">
-        <h3>Usługa telewizji</h3>
-        <table class="pricing-table">
-            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
-            <tr><td>Pakiet Standard</td><td>na czas nieokreślony</td><td class="price-highlight">35 zł / miesiąc</td></tr>
-        </table>
-        <h3>Usługa internetu</h3>
-        <table class="pricing-table">
-            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
-            <tr><td>Pakiet I</td><td>na czas nieokreślony</td><td class="price-highlight">30,25 zł / miesiąc</td></tr>
-            <tr><td>Pakiet II</td><td>na czas nieokreślony</td><td class="price-highlight">40,33 zł / miesiąc</td></tr>
-            <tr><td>Pakiet III</td><td>na czas nieokreślony</td><td class="price-highlight">50,41 zł / miesiąc</td></tr>
-            <tr><td>Udostępnienie modemu</td><td>-</td><td class="price-highlight">1,23 zł / miesiąc</td></tr>
-        </table>
-        <h3>Pakiety łączone (TV + Internet)</h3>
-        <table class="pricing-table">
-            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
-            <tr><td>TV Standard + Internet I</td><td>na czas nieokreślony</td><td class="price-highlight">70,25 zł / miesiąc</td></tr>
-            <tr><td>TV Standard + Internet II</td><td>na czas nieokreślony</td><td class="price-highlight">80,33 zł / miesiąc</td></tr>
-            <tr><td>TV Standard + Internet III</td><td>na czas nieokreślony</td><td class="price-highlight">90,41 zł / miesiąc</td></tr>
-        </table>
-    </div>
+    <section class="pricing-section">
+        <div class="container">
+            <div class="city-switcher">
+                <div class="city-switcher-inner">
+                    <button class="city-btn active" onclick="showCity('kluczbork', this)">Kluczbork</button>
+                    <button class="city-btn" onclick="showCity('byczyna', this)">Byczyna</button>
+                </div>
+            </div>
 
-    <div id="byczyna" class="city-content">
-        <h3>Usługa telewizji</h3>
-        <table class="pricing-table">
-            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
-            <tr><td>Pakiet Standard</td><td>na czas nieokreślony</td><td class="price-highlight">40 zł / miesiąc</td></tr>
-        </table>
-        <h3>Usługa internetu</h3>
-        <table class="pricing-table">
-            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
-            <tr><td>Pakiet I</td><td>na czas nieokreślony</td><td class="price-highlight">30,25 zł / miesiąc</td></tr>
-            <tr><td>Pakiet II</td><td>na czas nieokreślony</td><td class="price-highlight">40,33 zł / miesiąc</td></tr>
-            <tr><td>Pakiet III</td><td>na czas nieokreślony</td><td class="price-highlight">50,41 zł / miesiąc</td></tr>
-            <tr><td>Udostępnienie modemu</td><td>-</td><td class="price-highlight">1,23 zł / miesiąc</td></tr>
-        </table>
-        <h3>Pakiety łączone (TV + Internet)</h3>
-        <table class="pricing-table">
-            <tr><th>Pakiet</th><th>Czas trwania</th><th>Opłata abonamentowa</th></tr>
-            <tr><td>TV Standard + Internet I</td><td>na czas nieokreślony</td><td class="price-highlight">70,25 zł / miesiąc</td></tr>
-            <tr><td>TV Standard + Internet II</td><td>na czas nieokreślony</td><td class="price-highlight">80,33 zł / miesiąc</td></tr>
-            <tr><td>TV Standard + Internet III</td><td>na czas nieokreślony</td><td class="price-highlight">90,41 zł / miesiąc</td></tr>
-        </table>
-    </div>
+            <!-- KLUCZBORK -->
+            <div id="kluczbork" class="city-content active">
+                <h2 style="text-align:center; color:var(--dark); margin-bottom:40px; font-size:28px;">Telewizja kablowa</h2>
+                <div class="packages-grid">
+                    <div class="package-card featured">
+                        <div class="package-icon">
+                            <svg><use href="#icon-tv"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet Standard</div>
+                        <div class="package-desc">Telewizja kablowa dla całej rodziny</div>
+                        <div class="package-price">
+                            <span class="amount">35</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Kanały telewizyjne</li>
+                            <li><span class="check">✓</span> Jakość HD</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn">Zamów teraz</a>
+                    </div>
+                </div>
 
-    <h2 class="section-subtitle">Opłaty instalacyjne</h2>
-    <table class="pricing-table">
-        <tr><th>Usługa</th><th>Cena</th></tr>
-        <tr><td>Przyłączenie lokalu w budynku wielorodzinnym</td><td class="price-highlight">40 zł</td></tr>
-        <tr><td>Przyłączenie budynku jednorodzinnego</td><td class="price-highlight">300 zł</td></tr>
-        <tr><td>Wznowienie usługi po zawieszeniu</td><td class="price-highlight">40 zł</td></tr>
-    </table>
+                <h2 style="text-align:center; color:var(--dark); margin:60px 0 40px; font-size:28px;">Internet światłowodowy</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-icon">
+                            <svg><use href="#icon-wifi"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet I</div>
+                        <div class="package-desc">Podstawowy internet dla domu</div>
+                        <div class="package-price">
+                            <span class="amount">30,25</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Internet stacjonarny</li>
+                            <li><span class="check">✓</span> Bez limitu danych</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn outline">Wybierz</a>
+                    </div>
+                    <div class="package-card featured">
+                        <div class="package-icon">
+                            <svg><use href="#icon-wifi"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet II</div>
+                        <div class="package-desc">Szybszy internet dla wymagających</div>
+                        <div class="package-price">
+                            <span class="amount">40,33</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Wyższa prędkość</li>
+                            <li><span class="check">✓</span> Bez limitu danych</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn">Zamów teraz</a>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-icon">
+                            <svg><use href="#icon-wifi"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet III</div>
+                        <div class="package-desc">Najszybszy internet w ofercie</div>
+                        <div class="package-price">
+                            <span class="amount">50,41</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Maksymalna prędkość</li>
+                            <li><span class="check">✓</span> Bez limitu danych</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn outline">Wybierz</a>
+                    </div>
+                </div>
 
-    <h2 class="section-subtitle">Usługi serwisowe</h2>
-    <table class="pricing-table">
-        <tr><th>Usługa</th><th>Cena</th></tr>
-        <tr><td>Dostrojenie urządzenia</td><td class="price-highlight">40 zł</td></tr>
-        <tr><td>Godzina pracy technika</td><td class="price-highlight">45 zł</td></tr>
-        <tr><td>Zawieszenie usługi na życzenie</td><td class="price-highlight">40 zł</td></tr>
-        <tr><td>Przeniesienie praw z Umowy</td><td class="price-highlight">45 zł</td></tr>
-        <tr><td>Niezwrócenie modemu</td><td class="price-highlight">160 zł</td></tr>
-    </table>
+                <p style="text-align:center; color:var(--gray); margin-top:20px;">Udostępnienie modemu: <strong>1,23 zł/miesiąc</strong></p>
+            </div>
 
-    <div class="note"><strong>Uwaga:</strong> Pełny cennik dostępny w sekcji <a href="dokumenty.html">Dokumenty</a>.</div>
-    </div></section>
-    <footer class="footer"><div class="container"><div class="footer-grid"><div><h4>O nas</h4><p>TVK EDEN - telewizja i internet w Kluczborku i Byczynie.</p><p style="margin-top:10px;font-size:12px;color:#888">NIP: 751-123-00-41 | REGON: 531342360</p></div><div><h4>Linki</h4><ul><li><a href="index.html">Strona Główna</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li></ul></div><div><h4>Kontakt</h4><p>ul. Mickiewicza 14, 46-200 Kluczbork</p><p>ul. Wałowa 30, 46-220 Byczyna</p></div></div><div class="footer-bottom"><p>2026 Mobilna Kraina Eden Witold Perucki</p></div></div></footer>
+            <!-- BYCZYNA -->
+            <div id="byczyna" class="city-content">
+                <h2 style="text-align:center; color:var(--dark); margin-bottom:40px; font-size:28px;">Telewizja kablowa</h2>
+                <div class="packages-grid">
+                    <div class="package-card featured">
+                        <div class="package-icon">
+                            <svg><use href="#icon-tv"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet Standard</div>
+                        <div class="package-desc">Telewizja kablowa dla całej rodziny</div>
+                        <div class="package-price">
+                            <span class="amount">40</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Kanały telewizyjne</li>
+                            <li><span class="check">✓</span> Jakość HD</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn">Zamów teraz</a>
+                    </div>
+                </div>
+
+                <h2 style="text-align:center; color:var(--dark); margin:60px 0 40px; font-size:28px;">Internet światłowodowy</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-icon">
+                            <svg><use href="#icon-wifi"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet I</div>
+                        <div class="package-desc">Podstawowy internet dla domu</div>
+                        <div class="package-price">
+                            <span class="amount">30,25</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Internet stacjonarny</li>
+                            <li><span class="check">✓</span> Bez limitu danych</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn outline">Wybierz</a>
+                    </div>
+                    <div class="package-card featured">
+                        <div class="package-icon">
+                            <svg><use href="#icon-wifi"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet II</div>
+                        <div class="package-desc">Szybszy internet dla wymagających</div>
+                        <div class="package-price">
+                            <span class="amount">40,33</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Wyższa prędkość</li>
+                            <li><span class="check">✓</span> Bez limitu danych</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn">Zamów teraz</a>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-icon">
+                            <svg><use href="#icon-wifi"/></svg>
+                        </div>
+                        <div class="package-name">Pakiet III</div>
+                        <div class="package-desc">Najszybszy internet w ofercie</div>
+                        <div class="package-price">
+                            <span class="amount">50,41</span>
+                            <span class="currency">zł</span>
+                            <span class="period">/ miesiąc</span>
+                        </div>
+                        <ul class="package-features">
+                            <li><span class="check">✓</span> Maksymalna prędkość</li>
+                            <li><span class="check">✓</span> Bez limitu danych</li>
+                            <li><span class="check">✓</span> Umowa na czas nieokreślony</li>
+                        </ul>
+                        <a href="index.html#kontakt" class="package-btn outline">Wybierz</a>
+                    </div>
+                </div>
+
+                <p style="text-align:center; color:var(--gray); margin-top:20px;">Udostępnienie modemu: <strong>1,23 zł/miesiąc</strong></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bundle Section -->
+    <section class="bundle-section">
+        <div class="container">
+            <h2>Pakiety łączone TV + Internet</h2>
+            <p style="text-align:center; color:rgba(255,255,255,0.7); margin-bottom:40px;">Oszczędzaj łącząc usługi w jeden pakiet</p>
+            <div class="bundle-cards">
+                <div class="bundle-card">
+                    <h3>TV + Internet I</h3>
+                    <div class="price">70,25 <span>zł/mies.</span></div>
+                    <ul>
+                        <li>Telewizja kablowa Standard</li>
+                        <li>Internet Pakiet I</li>
+                        <li>Umowa na czas nieokreślony</li>
+                    </ul>
+                    <a href="index.html#kontakt" class="package-btn" style="margin-top:15px;">Zamów</a>
+                </div>
+                <div class="bundle-card" style="border-color:var(--primary); border-width:2px;">
+                    <h3>TV + Internet II</h3>
+                    <div class="price">80,33 <span>zł/mies.</span></div>
+                    <ul>
+                        <li>Telewizja kablowa Standard</li>
+                        <li>Internet Pakiet II</li>
+                        <li>Umowa na czas nieokreślony</li>
+                    </ul>
+                    <a href="index.html#kontakt" class="package-btn" style="margin-top:15px;">Zamów</a>
+                </div>
+                <div class="bundle-card">
+                    <h3>TV + Internet III</h3>
+                    <div class="price">90,41 <span>zł/mies.</span></div>
+                    <ul>
+                        <li>Telewizja kablowa Standard</li>
+                        <li>Internet Pakiet III</li>
+                        <li>Umowa na czas nieokreślony</li>
+                    </ul>
+                    <a href="index.html#kontakt" class="package-btn" style="margin-top:15px;">Zamów</a>
+                </div>
+            </div>
+            <p style="text-align:center; color:rgba(255,255,255,0.6); margin-top:30px; font-size:14px;">* Ceny pakietów łączonych dla Kluczborka. Ceny dla Byczyny mogą się różnić w zakresie usługi TV.</p>
+        </div>
+    </section>
+
+    <!-- Fees Section -->
+    <section class="fees-section">
+        <div class="container">
+            <h2>Dodatkowe opłaty</h2>
+            <div class="fees-grid">
+                <div class="fees-table">
+                    <h3>Opłaty instalacyjne</h3>
+                    <table>
+                        <tr>
+                            <td>Przyłączenie lokalu w budynku wielorodzinnym</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Przyłączenie budynku jednorodzinnego</td>
+                            <td>300 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Wznowienie usługi po zawieszeniu</td>
+                            <td>40 zł</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="fees-table">
+                    <h3>Usługi serwisowe</h3>
+                    <table>
+                        <tr>
+                            <td>Dostrojenie urządzenia</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Godzina pracy technika</td>
+                            <td>45 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Zawieszenie usługi na życzenie</td>
+                            <td>40 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Przeniesienie praw z Umowy</td>
+                            <td>45 zł</td>
+                        </tr>
+                        <tr>
+                            <td>Niezwrócenie modemu</td>
+                            <td>160 zł</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Informacja:</strong> Wszystkie ceny zawierają podatek VAT. Pełny cennik oraz regulamin świadczenia usług dostępny w sekcji <a href="dokumenty.html">Dokumenty</a>. Umowy zawierane są na czas nieokreślony z miesięcznym okresem wypowiedzenia.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-grid"><div><h4>O nas</h4><p>TVK EDEN - lokalny dostawca telewizji kablowej i internetu w Kluczborku i Byczynie.</p><p style="margin-top:10px;font-size:12px;color:#888">NIP: 751-123-00-41 | REGON: 531342360</p></div><div><h4>Linki</h4><ul><li><a href="index.html">Strona Główna</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li><li><a href="informacje-prawne.html">Informacje prawne</a></li></ul></div><div><h4>Kontakt</h4><p>ul. Mickiewicza 14, 46-200 Kluczbork</p><p>ul. Wałowa 30, 46-220 Byczyna</p><p style="margin-top:10px;"><strong>Tel:</strong> +48 601 718 675</p></div></div><div class="footer-bottom"><p>© 2024 Mobilna Kraina Eden Witold Perucki. Wszelkie prawa zastrzeżone.</p></div></div></footer>
+
     <script>
     function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}
     function showCity(city, btn){
-        document.querySelectorAll('.city-tab').forEach(function(tab){tab.classList.remove('active');});
-        document.querySelectorAll('.city-content').forEach(function(content){content.classList.remove('active');});
+        document.querySelectorAll('.city-btn').forEach(function(b){b.classList.remove('active');});
+        document.querySelectorAll('.city-content').forEach(function(c){c.classList.remove('active');});
         document.getElementById(city).classList.add('active');
         btn.classList.add('active');
     }
