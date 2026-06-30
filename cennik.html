@@ -1,311 +1,39 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
-    <meta name="description" content="Cennik usług TVK EDEN - telewizja kablowa i internet w Kluczborku i Byczynie">
-    <title>Cennik - EDEN Telewizja kablowa i Internet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik - EDEN</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <style>
-        .page-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
+        .page-header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 60px 0; text-align: center; }
         .page-header h1 { font-size: 36px; }
         .pricing-section { padding: 60px 0; }
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: white;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .pricing-table th {
-            background: var(--dark);
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-        .pricing-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 5px 30px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
+        .pricing-table th { background: var(--dark); color: white; padding: 15px; text-align: left; }
+        .pricing-table td { padding: 15px; border-bottom: 1px solid #eee; }
         .pricing-table tr:hover { background: #f9f9f9; }
-        .price-highlight {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 18px;
-        }
-        .section-subtitle {
-            color: var(--primary);
-            font-size: 24px;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-        }
-        .note {
-            background: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 14px;
-            color: var(--gray);
-        }
+        .price-highlight { color: var(--primary); font-weight: 700; font-size: 18px; }
+        .section-subtitle { color: var(--primary); font-size: 24px; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .city-section { background: var(--light-gray); padding: 40px; border-radius: 15px; margin: 40px 0; }
+        .city-section h2 { color: var(--primary); font-size: 28px; margin-bottom: 20px; text-align: center; }
+        .city-section h3 { color: var(--dark); font-size: 20px; margin: 30px 0 10px; }
+        .note { background: var(--light-gray); padding: 20px; border-radius: 8px; margin: 20px 0; font-size: 14px; color: var(--gray); }
     </style>
 </head>
 <body>
-    <!-- SVG Icons -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-        <symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></symbol>
-    </svg>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <span>Tel: +48 601 718 675 | eden@mobilnakraina.pl</span>
-                <span>Pon-Pt: 8:00 - 16:00</span>
-            </div>
-        </div>
-        <div class="header-main">
-            <div class="container">
-                <a href="index.html" class="logo">
-                    <img src="img/logo.png" alt="EDEN Telewizja Internet">
-                </a>
-                <nav class="nav">
-                    <button class="mobile-menu-btn" onclick="toggleMenu()"><svg class="icon"><use href="#icon-menu"/></svg></button>
-                    <ul id="nav-menu">
-                        <li><a href="index.html">Strona Główna</a></li>
-                        <li><a href="index.html#uslugi">Oferta</a></li>
-                        <li><a href="cennik.html">Cennik</a></li>
-                        <li><a href="dokumenty.html">Dokumenty</a></li>
-                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
-                        <li><a href="index.html#kontakt">Kontakt</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Cennik usług</h1>
-            <p>Przejrzyste ceny bez ukrytych kosztów</p>
-        </div>
-    </section>
-
-    <!-- Pricing Content -->
-    <section class="pricing-section">
-        <div class="container">
-
-            <h2 class="section-subtitle">Opłaty instalacyjne i aktywacyjne</h2>
-            <table class="pricing-table">
-                <tr>
-                    <th>Usługa</th>
-                    <th>Cena</th>
-                </tr>
-                <tr>
-                    <td>Przyłączenie do sieci lokalu w budynku wielorodzinnym</td>
-                    <td class="price-highlight">40 zl</td>
-                </tr>
-                <tr>
-                    <td>Przyłączenie do sieci budynku jednorodzinnego</td>
-                    <td class="price-highlight">300 zl</td>
-                </tr>
-                <tr>
-                    <td>Opłata za wznowienie usługi po jej zawieszeniu</td>
-                    <td class="price-highlight">40 zl</td>
-                </tr>
-            </table>
-
-            <h2 class="section-subtitle">Usługa telewizji</h2>
-            <table class="pricing-table">
-                <tr>
-                    <th>Pakiet</th>
-                    <th>Czas trwania</th>
-                    <th>Opłata abonamentowa</th>
-                </tr>
-                <tr>
-                    <td>Pakiet Standard</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">35 zl / 40 zl miesiecznie</td>
-                </tr>
-            </table>
-
-            <h2 class="section-subtitle">Usługa internetu</h2>
-            <table class="pricing-table">
-                <tr>
-                    <th>Pakiet</th>
-                    <th>Prędkość maks.</th>
-                    <th>Czas trwania</th>
-                    <th>Opłata abonamentowa</th>
-                </tr>
-                <tr>
-                    <td>Pakiet I</td>
-                    <td>do 10 Mb/s</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">30,25 zl/mies.</td>
-                </tr>
-                <tr>
-                    <td>Pakiet II</td>
-                    <td>do 30 Mb/s</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">40,33 zl/mies.</td>
-                </tr>
-                <tr>
-                    <td>Pakiet III</td>
-                    <td>do 60 Mb/s</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">50,41 zl/mies.</td>
-                </tr>
-                <tr>
-                    <td>Udostepnienie modemu</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td class="price-highlight">1,23 zl/mies.</td>
-                </tr>
-            </table>
-
-            <p style="margin-top: 15px;"><em>Szczegolowe parametry predkosci (minimalna, zwykle dostepna, maksymalna) dostepne na stronie <a href="informacje-prawne.html">Informacje prawne</a>.</em></p>
-
-            <h2 class="section-subtitle">Pakiety łączone (TV + Internet)</h2>
-            <table class="pricing-table">
-                <tr>
-                    <th>Pakiet</th>
-                    <th>Czas trwania</th>
-                    <th>Opłata abonamentowa</th>
-                </tr>
-                <tr>
-                    <td>Telewizja Standard + Internet Pakiet I</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">70,25 zl/mies.</td>
-                </tr>
-                <tr>
-                    <td>Telewizja Standard + Internet Pakiet II</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">80,33 zl/mies.</td>
-                </tr>
-                <tr>
-                    <td>Telewizja Standard + Internet Pakiet III</td>
-                    <td>na czas nieokreślony</td>
-                    <td class="price-highlight">90,41 zl/mies.</td>
-                </tr>
-            </table>
-
-            <h2 class="section-subtitle">Usługi serwisowe i inne opłaty</h2>
-            <table class="pricing-table">
-                <tr>
-                    <th>Usługa</th>
-                    <th>Cena</th>
-                </tr>
-                <tr>
-                    <td>Dostrojenie urzadzenia koncowego Abonenta</td>
-                    <td class="price-highlight">40 zl</td>
-                </tr>
-                <tr>
-                    <td>Godzina pracy technika (prace nieobjete bezplatna obsluga)</td>
-                    <td class="price-highlight">45 zl</td>
-                </tr>
-                <tr>
-                    <td>Oplata za zawieszenie uslugi na zyczenie Abonenta</td>
-                    <td class="price-highlight">40 zl</td>
-                </tr>
-                <tr>
-                    <td>Oplata za przeniesienie praw i obowiazkow z Umowy na inna osobe</td>
-                    <td class="price-highlight">45 zl</td>
-                </tr>
-                <tr>
-                    <td>Oplata za niezwrocenie modemu</td>
-                    <td class="price-highlight">160 zl</td>
-                </tr>
-            </table>
-
-            <h2 class="section-subtitle">Wskaźniki jakości</h2>
-            <table class="pricing-table">
-                <tr>
-                    <th>Parametr</th>
-                    <th>Wartosc</th>
-                </tr>
-                <tr>
-                    <td>Czas oczekiwania na przyłączenie do sieci</td>
-                    <td>5 dni</td>
-                </tr>
-                <tr>
-                    <td>Czas oczekiwania na połączenie z personelem (dni robocze)</td>
-                    <td>do 3660 sekund</td>
-                </tr>
-                <tr>
-                    <td>Czas oczekiwania na połączenie z personelem (dni wolne)</td>
-                    <td>do 7320 sekund</td>
-                </tr>
-                <tr>
-                    <td>Czas usuniecia awarii</td>
-                    <td>48 godzin</td>
-                </tr>
-            </table>
-
-            <div class="note">
-                <strong>Uwaga:</strong> Pelny cennik wraz ze szczegolowymi informacjami o wskaznikach jakosci uslug dostepny jest w dokumencie "Cennik usług telekomunikacyjnych" do pobrania w sekcji <a href="dokumenty.html">Dokumenty</a>.
-            </div>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="dokumenty/Cennik_uslug.docx" class="btn btn-primary" download>Pobierz pelny cennik (DOCX)</a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4>O nas</h4>
-                    <p>TVK EDEN to lokalny dostawca telewizji kablowej i internetu w Kluczborku i Byczynie.</p>
-                    <p style="margin-top: 10px; font-size: 12px; color: #888;">NIP: 751-123-00-41 | REGON: 531342360</p>
-                </div>
-                <div>
-                    <h4>Szybkie linki</h4>
-                    <ul>
-                        <li><a href="index.html">Strona Główna</a></li>
-                        <li><a href="cennik.html">Cennik</a></li>
-                        <li><a href="dokumenty.html">Dokumenty</a></li>
-                        <li><a href="informacje-prawne.html">Informacje prawne</a></li>
-                        <li><a href="polityka-prywatnosci.html">Polityka prywatnosci</a></li>
-                        <li><a href="index.html#kontakt">Kontakt</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Kontakt</h4>
-                    <p>ul. Mickiewicza 14<br>46-200 Kluczbork</p>
-                    <p>ul. Wałowa 30<br>46-220 Byczyna</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mobilna Kraina Eden Witold Perucki. Wszelkie prawa zastrzeżone.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        }
-
-        // Set active nav link based on current page
-        document.querySelectorAll('.nav a').forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === location.pathname.split('/').pop() ||
-                (location.pathname.endsWith('/') && link.getAttribute('href') === 'index.html')) {
-                link.classList.add('active');
-            }
-        });
-    </script>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="icon-menu" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></symbol></svg>
+    <header class="header"><div class="header-top"><div class="container"><span>Tel: +48 601 718 675 | eden@mobilnakraina.pl</span><span>Pon-Pt: 8:00 - 16:00</span></div></div><div class="header-main"><div class="container"><a href="index.html" class="logo"><img src="img/logo.png" alt="EDEN"></a><nav class="nav"><button class="mobile-menu-btn" onclick="toggleMenu()"><svg class="icon"><use href="#icon-menu"/></svg></button><ul id="nav-menu"><li><a href="index.html">Strona Glowna</a></li><li><a href="index.html#uslugi">Oferta</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li><li><a href="informacje-prawne.html">Informacje prawne</a></li><li><a href="index.html#kontakt">Kontakt</a></li></ul></nav></div></div></header>
+    <section class="page-header"><div class="container"><h1>Cennik uslug</h1><p>Przejrzyste ceny bez ukrytych kosztow</p></div></section>
+    <section class="pricing-section"><div class="container">
+    <div class="city-section"><h2>Kluczbork</h2><h3>Usluga telewizji</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Oplata abonamentowa</th></tr><tr><td>Pakiet Standard</td><td>na czas nieokreslony</td><td class="price-highlight">35 zl / miesiac</td></tr></table><h3>Usluga internetu</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Oplata abonamentowa</th></tr><tr><td>Pakiet I</td><td>na czas nieokreslony</td><td class="price-highlight">30,25 zl / miesiac</td></tr><tr><td>Pakiet II</td><td>na czas nieokreslony</td><td class="price-highlight">40,33 zl / miesiac</td></tr><tr><td>Pakiet III</td><td>na czas nieokreslony</td><td class="price-highlight">50,41 zl / miesiac</td></tr><tr><td>Udostepnienie modemu</td><td>-</td><td class="price-highlight">1,23 zl / miesiac</td></tr></table><h3>Pakiety laczone (TV + Internet)</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Oplata abonamentowa</th></tr><tr><td>TV Standard + Internet I</td><td>na czas nieokreslony</td><td class="price-highlight">70,25 zl / miesiac</td></tr><tr><td>TV Standard + Internet II</td><td>na czas nieokreslony</td><td class="price-highlight">80,33 zl / miesiac</td></tr><tr><td>TV Standard + Internet III</td><td>na czas nieokreslony</td><td class="price-highlight">90,41 zl / miesiac</td></tr></table></div>
+    <div class="city-section"><h2>Byczyna</h2><h3>Usluga telewizji</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Oplata abonamentowa</th></tr><tr><td>Pakiet Standard</td><td>na czas nieokreslony</td><td class="price-highlight">40 zl / miesiac</td></tr></table><h3>Usluga internetu</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Oplata abonamentowa</th></tr><tr><td>Pakiet I</td><td>na czas nieokreslony</td><td class="price-highlight">30,25 zl / miesiac</td></tr><tr><td>Pakiet II</td><td>na czas nieokreslony</td><td class="price-highlight">40,33 zl / miesiac</td></tr><tr><td>Pakiet III</td><td>na czas nieokreslony</td><td class="price-highlight">50,41 zl / miesiac</td></tr><tr><td>Udostepnienie modemu</td><td>-</td><td class="price-highlight">1,23 zl / miesiac</td></tr></table><h3>Pakiety laczone (TV + Internet)</h3><table class="pricing-table"><tr><th>Pakiet</th><th>Czas trwania</th><th>Oplata abonamentowa</th></tr><tr><td>TV Standard + Internet I</td><td>na czas nieokreslony</td><td class="price-highlight">70,25 zl / miesiac</td></tr><tr><td>TV Standard + Internet II</td><td>na czas nieokreslony</td><td class="price-highlight">80,33 zl / miesiac</td></tr><tr><td>TV Standard + Internet III</td><td>na czas nieokreslony</td><td class="price-highlight">90,41 zl / miesiac</td></tr></table></div>
+    <h2 class="section-subtitle">Oplaty instalacyjne</h2><table class="pricing-table"><tr><th>Usluga</th><th>Cena</th></tr><tr><td>Przylaczenie lokalu w budynku wielorodzinnym</td><td class="price-highlight">40 zl</td></tr><tr><td>Przylaczenie budynku jednorodzinnego</td><td class="price-highlight">300 zl</td></tr><tr><td>Wznowienie uslugi po zawieszeniu</td><td class="price-highlight">40 zl</td></tr></table>
+    <h2 class="section-subtitle">Uslugi serwisowe</h2><table class="pricing-table"><tr><th>Usluga</th><th>Cena</th></tr><tr><td>Dostrojenie urzadzenia</td><td class="price-highlight">40 zl</td></tr><tr><td>Godzina pracy technika</td><td class="price-highlight">45 zl</td></tr><tr><td>Zawieszenie uslugi na zyczenie</td><td class="price-highlight">40 zl</td></tr><tr><td>Przeniesienie praw z Umowy</td><td class="price-highlight">45 zl</td></tr><tr><td>Niezwrocenie modemu</td><td class="price-highlight">160 zl</td></tr></table>
+    <div class="note"><strong>Uwaga:</strong> Pelny cennik dostepny w sekcji <a href="dokumenty.html">Dokumenty</a>.</div>
+    </div></section>
+    <footer class="footer"><div class="container"><div class="footer-grid"><div><h4>O nas</h4><p>TVK EDEN - telewizja i internet w Kluczborku i Byczynie.</p><p style="margin-top:10px;font-size:12px;color:#888">NIP: 751-123-00-41 | REGON: 531342360</p></div><div><h4>Linki</h4><ul><li><a href="index.html">Strona Glowna</a></li><li><a href="cennik.html">Cennik</a></li><li><a href="dokumenty.html">Dokumenty</a></li></ul></div><div><h4>Kontakt</h4><p>ul. Mickiewicza 14, 46-200 Kluczbork</p><p>ul. Walowa 30, 46-220 Byczyna</p></div></div><div class="footer-bottom"><p>2026 Mobilna Kraina Eden Witold Perucki</p></div></div></footer>
+    <script>function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}</script>
 </body>
 </html>
